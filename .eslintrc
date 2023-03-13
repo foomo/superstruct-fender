@@ -1,0 +1,33 @@
+{
+	"extends": [
+		"plugin:@typescript-eslint/eslint-recommended",
+		"plugin:prettier/recommended"
+	],
+	"plugins": [
+		"@typescript-eslint",
+		"prettier",
+		"prettier/@typescript-eslint"
+	],
+	"parser": "@typescript-eslint/parser",
+	"parserOptions": {
+		"sourceType": "module",
+		"ecmaVersion": 2020,
+		"ecmaFeatures": {
+			"jsx": true
+		}
+	},
+	"env": {
+		"es6": true,
+		"node": true,
+		"mocha": true,
+		"browser": true
+	},
+	"settings": {
+		"import/extensions": [
+			".js",
+			".ts"
+		]
+	},
+	"rules": {
+	}
+}

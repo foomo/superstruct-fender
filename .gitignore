@@ -1,0 +1,12 @@
+*.
+.*
+!.github/
+!.babelrc
+!.eslintrc
+!.gitignore
+!.editorconfig
+!.prettierignore
+!.prettierrc
+dist/
+node_modules/
+tmp/
