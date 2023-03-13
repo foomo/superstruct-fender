@@ -1,8 +1,8 @@
-import {string} from 'superstruct'
-import {suffix} from "../../../src/structs/string";
+import { string } from 'superstruct'
+import { suffix } from '../../../src'
 
-export const Struct = suffix(string(), "bar")
+export const Struct = suffix(string(), 'bar')
 
-export const data = "foobar"
+export const data = 'foobar'
 
-export const output = "foobar"
+export const output = 'foobar'

@@ -1,6 +1,6 @@
-import {Struct, refine} from "superstruct";
+import { Struct, refine } from 'superstruct'
 
-export function prefix<T extends string, S extends any>(
+export function prefix<T extends string, S>(
 	struct: Struct<T, S>,
 	expected: string
 ): Struct<T, S> {
@@ -12,7 +12,7 @@ export function prefix<T extends string, S extends any>(
 	})
 }
 
-export function noPrefix<T extends string, S extends any>(
+export function noPrefix<T extends string, S>(
 	struct: Struct<T, S>,
 	expected: string
 ): Struct<T, S> {
@@ -24,7 +24,7 @@ export function noPrefix<T extends string, S extends any>(
 	})
 }
 
-export function suffix<T extends string, S extends any>(
+export function suffix<T extends string, S>(
 	struct: Struct<T, S>,
 	expected: string
 ): Struct<T, S> {
@@ -36,7 +36,7 @@ export function suffix<T extends string, S extends any>(
 	})
 }
 
-export function noSuffix<T extends string, S extends any>(
+export function noSuffix<T extends string, S>(
 	struct: Struct<T, S>,
 	expected: string
 ): Struct<T, S> {
