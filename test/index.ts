@@ -1,14 +1,10 @@
-import assert, { CallTracker } from 'assert'
+import assert from 'assert'
 import fs from 'fs'
 import { pick } from 'lodash'
 import { basename, extname, resolve } from 'path'
 import {
-	any,
 	assert as assertValue,
-	// eslint-disable-next-line import/named
-	Context,
 	create as createValue,
-	deprecated,
 	StructError,
 } from 'superstruct'
 
@@ -29,7 +25,7 @@ describe('superstruct-fender', () => {
 					.map((t) => basename(t, extname(t)))
 
 				for (const name of tests) {
-					const module = require(resolve(testsDir, name))
+					const module = require(resolve(testsDir, name)) // eslint-disable-line @typescript-eslint/no-var-requires
 					const { Struct, data, create, only, skip, output, failures } = module
 					const run = only ? it.only : skip ? it.skip : it
 					run(name, () => {
@@ -84,10 +80,3 @@ describe('superstruct-fender', () => {
 		}
 	})
 })
-
-/**
- * A helper for testing type signatures.
- */
-
-export function test<T>(fn: (x: unknown) => T) {}
-
