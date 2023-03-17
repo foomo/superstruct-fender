@@ -8,7 +8,7 @@ import {
 	StructError,
 } from 'superstruct'
 
-describe('superstruct-fender', () => {
+describe('@foomo/fender', () => {
 	describe('validation', () => {
 		const kindsDir = resolve(__dirname, 'validation')
 		const kinds = fs
