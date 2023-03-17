@@ -1,1 +1,2 @@
-export * from './structs/string'
+export * from './types'
+export * from './structs'

@@ -11,7 +11,7 @@
 		"outDir": "./dist",
 		"sourceMap": true,
 		"strict": true,
-		"suppressImplicitAnyIndexErrors": true,
+		"noImplicitAny": false,
 		"target": "es2020"
 	}
 }

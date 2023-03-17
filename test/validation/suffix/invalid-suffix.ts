@@ -1,7 +1,7 @@
+import { fend, suffix } from '../../../src'
 import { string } from 'superstruct'
-import { suffix } from '../../../src'
 
-export const Struct = suffix(string(), 'baz')
+export const Struct = fend(string(), suffix('baz'))
 
 export const data = 'foobar'
 

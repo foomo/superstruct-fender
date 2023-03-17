@@ -1,7 +1,7 @@
+import { fend, prefix } from '../../../src'
 import { string } from 'superstruct'
-import { prefix } from '../../../src'
 
-export const Struct = prefix(string(), 'faa')
+export const Struct = fend(string(), prefix('faa'))
 
 export const data = 'foobar'
 

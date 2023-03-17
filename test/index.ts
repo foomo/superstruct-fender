@@ -1,7 +1,7 @@
 import assert from 'assert'
 import fs from 'fs'
-import { pick } from 'lodash'
 import { basename, extname, resolve } from 'path'
+import { pick } from 'lodash'
 import {
 	assert as assertValue,
 	create as createValue,
