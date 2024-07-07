@@ -1,0 +1,29 @@
+name: Test Branch
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+  merge_group:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: volta-cli/action@v4
+
+      - uses: actions/checkout@v3
+
+      - name: Run pnpm install
+        run: pnpm install
+
+      - name: Run pnpm lint
+        run: pnpm run lint
+
+      - name: Run pnpm test
+        run: pnpm run test
