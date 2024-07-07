@@ -1,8 +1,8 @@
-import { fend, required, min } from '../../../src'
-import { string } from 'superstruct'
+import { string } from 'superstruct';
+import { fend, min, required } from '../../../src';
 
-export const Struct = fend(string(), required, min(5))
+export const Struct = fend(string(), required, min(5));
 
-export const data = 'foobar'
+export const data = 'foobar';
 
-export const output = 'foobar'
+export const output = 'foobar';

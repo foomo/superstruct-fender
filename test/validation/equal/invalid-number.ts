@@ -1,9 +1,9 @@
-import { equal, fend } from '../../../src'
-import { number } from 'superstruct'
+import { number } from 'superstruct';
+import { equal, fend } from '../../../src';
 
-export const Struct = fend(number(), equal(5))
+export const Struct = fend(number(), equal(5));
 
-export const data = 1
+export const data = 1;
 
 export const failures = [
 	{
@@ -13,4 +13,4 @@ export const failures = [
 		path: [],
 		branch: [data],
 	},
-]
+];

@@ -1,13 +1,13 @@
-import { valid } from '../../../src'
+import { valid } from '../../../src';
 
 enum Values {
 	Foo = 'foo',
 	Bar = 'bar',
 }
 
-export const Struct = valid(Values)
+export const Struct = valid(Values);
 
-export const data = 'baz'
+export const data = 'baz';
 
 export const failures = [
 	{
@@ -17,4 +17,4 @@ export const failures = [
 		path: [],
 		branch: [data],
 	},
-]
+];

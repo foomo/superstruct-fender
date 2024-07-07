@@ -1,5 +1,5 @@
-import { match } from './match'
+import { match } from './match';
 
-export const NameAlnum = 'alnum'
+export const NameAlnum = 'alnum';
 
-export const alnum = match(NameAlnum, /^[a-zA-Z0-9]+$/)
+export const alnum = match(NameAlnum, /^[a-zA-Z0-9]+$/);

@@ -1,19 +1,19 @@
 export function getSize(
-	value: number | string | any[] | Map<any, any> | Set<any>
+	value: number | string | any[] | Map<any, any> | Set<any>,
 ): number {
-	if (typeof value == 'number') {
-		return value
+	if (typeof value === 'number') {
+		return value;
 	} else if (value instanceof Map || value instanceof Set) {
-		return value.size
+		return value.size;
 	} else {
-		return value.length
+		return value.length;
 	}
 }
 
 export function print(value: any): string {
 	if (typeof value === 'symbol') {
-		return value.toString()
+		return value.toString();
 	}
 
-	return typeof value === 'string' ? JSON.stringify(value) : `${value}`
+	return typeof value === 'string' ? JSON.stringify(value) : `${value}`;
 }

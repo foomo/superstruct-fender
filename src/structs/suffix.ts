@@ -1,11 +1,11 @@
-import { refine, Struct } from 'superstruct'
+import { type Struct, refine } from 'superstruct';
 
 export const suffix =
 	(expected: string) =>
 	(struct: Struct<string, null>): Struct<string, null> =>
-		refine(struct, 'suffix', (value) => value.endsWith(expected))
+		refine(struct, 'suffix', (value) => value.endsWith(expected));
 
 export const noSuffix =
 	(expected: string) =>
 	(struct: Struct<string, null>): Struct<string, null> =>
-		refine(struct, 'suffix', (value) => !value.endsWith(expected))
+		refine(struct, 'suffix', (value) => !value.endsWith(expected));
