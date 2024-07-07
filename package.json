@@ -4,6 +4,7 @@
 	"version": "0.1.0",
 	"author": "foomo",
 	"license": "MIT",
+	"keywords": ["foomo", "foomo-fender"],
 	"type": "module",
 	"main": "./dist/index.cjs",
 	"module": "./dist/index.mjs",
@@ -19,18 +20,12 @@
 	"publishConfig": {
 		"registry": "https://registry.npmjs.org"
 	},
-	"files": [
-		"dist"
-	],
+	"files": ["dist"],
 	"scripts": {
 		"build": "rm -rf ./{dist} && rollup --config ./rollup.config.js",
 		"clean": "rm -rf ./{dist,node_modules}",
-		"fix": "npm run fix:eslint && npm run fix:prettier",
-		"fix:eslint": "npm run lint:eslint --fix",
-		"fix:prettier": "npm run lint:prettier --write",
-		"lint": "npm run lint:eslint && npm run lint:prettier",
-		"lint:eslint": "eslint '{src,test}/*.{js,ts}'",
-		"lint:prettier": "prettier --list-different '**/*.{js,json,ts}'",
+		"lint": "biome check ./",
+		"lint:fix": "biome check --write ./",
 		"release": "npm run build && npm run lint && np",
 		"test": "npm run build && npm run test:types && npm run test:mocha",
 		"test:mocha": "mocha --require ./test/register.cjs --require source-map-support/register ./test/index.ts",
@@ -38,68 +33,35 @@
 		"watch": "npm run build -- --watch"
 	},
 	"peerDependencies": {
-		"superstruct": "1.0.3"
+		"superstruct": "2.0.2"
 	},
 	"dependencies": {
-		"utility-types": "3.10.0"
+		"utility-types": "3.11.0"
 	},
 	"devDependencies": {
-		"@babel/cli": "7.21.5",
-		"@babel/core": "7.22.1",
-		"@babel/plugin-transform-modules-commonjs": "7.21.2",
-		"@babel/preset-env": "7.20.2",
-		"@babel/preset-typescript": "7.21.0",
-		"@babel/register": "7.21.0",
-		"@rollup/plugin-typescript": "11.0.0",
-		"@types/expect": "24.3.0",
-		"@types/lodash": "4.14.195",
-		"@types/mocha": "10.0.1",
-		"@types/node": "18.15.3",
-		"@typescript-eslint/eslint-plugin": "5.59.9",
-		"@typescript-eslint/parser": "5.55.0",
-		"babel-eslint": "10.1.0",
-		"eslint": "8.52.0",
-		"eslint-config-prettier": "8.8.0",
-		"eslint-plugin-prettier": "4.2.1",
+		"@babel/cli": "7.24.7",
+		"@babel/core": "7.24.7",
+		"@babel/plugin-transform-modules-commonjs": "7.24.7",
+		"@babel/preset-env": "7.24.7",
+		"@babel/preset-typescript": "7.24.7",
+		"@babel/register": "7.24.6",
+		"@biomejs/biome": "1.8.3",
+		"@rollup/plugin-typescript": "11.1.6",
+		"@types/lodash": "4.17.6",
+		"@types/mocha": "10.0.7",
+		"@types/node": "20.14.10",
 		"is-email": "1.0.2",
 		"is-url": "1.2.4",
 		"is-uuid": "1.0.2",
 		"lodash": "4.17.21",
-		"mocha": "10.2.0",
-		"np": "7.6.3",
-		"prettier": "2.8.8",
-		"rollup": "3.23.1",
-		"typescript": "4.9.5"
+		"mocha": "10.6.0",
+		"np": "10.0.6",
+		"rollup": "4.18.0",
+		"typescript": "5.5.3"
 	},
-	"keywords": [
-		"api",
-		"array",
-		"assert",
-		"cast",
-		"check",
-		"checker",
-		"collection",
-		"data",
-		"error",
-		"express",
-		"hapi",
-		"interface",
-		"invalid",
-		"joi",
-		"json",
-		"list",
-		"model",
-		"object",
-		"orm",
-		"scalar",
-		"schema",
-		"struct",
-		"throw",
-		"type",
-		"types",
-		"valid",
-		"validate",
-		"validation",
-		"validator"
-	]
+	"volta": {
+		"node": "22.4.0",
+		"pnpm": "9.4.0"
+	},
+	"packageManager": "pnpm@9.4.0"
 }

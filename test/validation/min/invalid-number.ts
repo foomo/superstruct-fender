@@ -1,9 +1,9 @@
-import { min, fend } from '../../../src'
-import { number } from 'superstruct'
+import { number } from 'superstruct';
+import { fend, min } from '../../../src';
 
-export const Struct = fend(number(), min(5))
+export const Struct = fend(number(), min(5));
 
-export const data = 1
+export const data = 1;
 
 export const failures = [
 	{
@@ -13,4 +13,4 @@ export const failures = [
 		path: [],
 		branch: [data],
 	},
-]
+];

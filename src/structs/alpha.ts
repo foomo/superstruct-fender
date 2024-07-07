@@ -1,5 +1,5 @@
-import { match } from './match'
+import { match } from './match';
 
-export const NameAlpha = 'alpha'
+export const NameAlpha = 'alpha';
 
-export const alpha = match(NameAlpha, /^[a-zA-Z]+$/)
+export const alpha = match(NameAlpha, /^[a-zA-Z]+$/);

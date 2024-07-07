@@ -1,9 +1,9 @@
-import { noPrefix, fend } from '../../../src'
-import { string } from 'superstruct'
+import { string } from 'superstruct';
+import { fend, noPrefix } from '../../../src';
 
-export const Struct = fend(string(), noPrefix('foo'))
+export const Struct = fend(string(), noPrefix('foo'));
 
-export const data = 'foobar'
+export const data = 'foobar';
 
 export const failures = [
 	{
@@ -13,4 +13,4 @@ export const failures = [
 		path: [],
 		branch: [data],
 	},
-]
+];
