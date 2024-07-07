@@ -20,17 +20,17 @@
 	"publishConfig": {
 		"registry": "https://registry.npmjs.org"
 	},
-	"files": ["dist"],
+	"files": ["dist", "README.md", "LICENSE", "CODE_OF_CONDUCT.md"],
 	"scripts": {
 		"build": "rm -rf ./{dist} && rollup --config ./rollup.config.js",
 		"clean": "rm -rf ./{dist,node_modules}",
 		"lint": "biome check ./",
 		"lint:fix": "biome check --write ./",
-		"release": "npm run build && npm run lint && np",
-		"test": "npm run build && npm run test:types && npm run test:mocha",
+		"release": "pnpm run build && pnpm run lint && np",
+		"test": "pnpm run build && pnpm run test:types && pnpm run test:mocha",
 		"test:mocha": "mocha --require ./test/register.cjs --require source-map-support/register ./test/index.ts",
 		"test:types": "tsc --noEmit && tsc --project ./test/tsconfig.json --noEmit",
-		"watch": "npm run build -- --watch"
+		"watch": "pnpm run build -- --watch"
 	},
 	"peerDependencies": {
 		"superstruct": "2.0.2"
