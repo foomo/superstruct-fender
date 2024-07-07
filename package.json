@@ -1,10 +1,13 @@
 {
 	"name": "@foomo/fender",
 	"description": "Superstruct extension with fender rules",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"author": "foomo",
 	"license": "MIT",
-	"keywords": ["foomo", "foomo-fender"],
+	"keywords": [
+		"foomo",
+		"foomo-fender"
+	],
 	"type": "module",
 	"main": "./dist/index.cjs",
 	"module": "./dist/index.mjs",
@@ -20,7 +23,12 @@
 	"publishConfig": {
 		"registry": "https://registry.npmjs.org"
 	},
-	"files": ["dist", "README.md", "LICENSE", "CODE_OF_CONDUCT.md"],
+	"files": [
+		"dist",
+		"README.md",
+		"LICENSE",
+		"CODE_OF_CONDUCT.md"
+	],
 	"scripts": {
 		"build": "rm -rf ./{dist} && rollup --config ./rollup.config.js",
 		"clean": "rm -rf ./{dist,node_modules}",
