@@ -14,10 +14,20 @@ concurrency:
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+      VOLTA_FEATURE_PNPM: '1'
     steps:
+      - uses: actions/checkout@v4
+
       - uses: volta-cli/action@v4
 
-      - uses: actions/checkout@v3
+      - name: Setup pnpm cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-
 
       - name: Run pnpm install
         run: pnpm install
