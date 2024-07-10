@@ -1,18 +1,18 @@
-import { refine, Struct } from 'superstruct'
-import { isFalsy } from 'utility-types'
+import { type Struct, refine } from 'superstruct';
+import { isFalsy } from 'utility-types';
 
-export const NameRequired = 'required'
+export const NameRequired = 'required';
 
 export const required = <
 	T extends number | string | any[] | Map<any, any> | Set<any>,
-	S
+	S,
 >(
-	struct: Struct<T, S>
-): Struct<T, S> => refine(struct, NameRequired, (value: T) => !isFalsy(value))
+	struct: Struct<T, S>,
+): Struct<T, S> => refine(struct, NameRequired, (value: T) => !isFalsy(value));
 
 export const isRequired =
 	<T extends number | string | any[] | Map<any, any> | Set<any>, S>(
-		expected: boolean
+		expected: boolean,
 	) =>
 	(struct: Struct<T, S>): Struct<T, S> =>
-		refine(struct, NameRequired, (value: T) => !isFalsy(value) === expected)
+		refine(struct, NameRequired, (value: T) => !isFalsy(value) === expected);

@@ -1,9 +1,9 @@
-import { fend, suffix } from '../../../src'
-import { string } from 'superstruct'
+import { string } from 'superstruct';
+import { fend, suffix } from '../../../src';
 
-export const Struct = fend(string(), suffix('baz'))
+export const Struct = fend(string(), suffix('baz'));
 
-export const data = 'foobar'
+export const data = 'foobar';
 
 export const failures = [
 	{
@@ -13,4 +13,4 @@ export const failures = [
 		path: [],
 		branch: [data],
 	},
-]
+];

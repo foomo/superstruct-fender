@@ -1,11 +1,11 @@
-import { fend, match } from '../../../src'
-import { string } from 'superstruct'
+import { string } from 'superstruct';
+import { fend, match } from '../../../src';
 
-const m = match('foo', /^[0-9]+$/)
+const m = match('foo', /^[0-9]+$/);
 
-export const Struct = fend(string(), m)
+export const Struct = fend(string(), m);
 
-export const data = '12a3'
+export const data = '12a3';
 
 export const failures = [
 	{
@@ -15,4 +15,4 @@ export const failures = [
 		path: [],
 		branch: [data],
 	},
-]
+];

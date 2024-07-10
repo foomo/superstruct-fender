@@ -1,9 +1,9 @@
-import { refine, Struct } from 'superstruct'
+import { Struct, refine } from 'superstruct';
 
-export const NameValid = 'valid'
+export const NameValid = 'valid';
 
 export const valid = <T>(
-	expected: { [s: string]: T } | ArrayLike<T>
+	expected: { [s: string]: T } | ArrayLike<T>,
 ): Struct<T, null> =>
 	refine(
 		new Struct({
@@ -12,5 +12,5 @@ export const valid = <T>(
 			validator: (value) => value !== undefined,
 		}),
 		NameValid,
-		(value) => Object.values(expected)?.includes(value as any)
-	)
+		(value) => Object.values(expected)?.includes(value as any),
+	);

@@ -1,9 +1,9 @@
-import { emailWeak, fend } from '../../../src'
-import { string } from 'superstruct'
+import { string } from 'superstruct';
+import { emailWeak, fend } from '../../../src';
 
-export const Struct = fend(string(), emailWeak)
+export const Struct = fend(string(), emailWeak);
 
-export const data = 'foobar'
+export const data = 'foobar';
 
 export const failures = [
 	{
@@ -13,4 +13,4 @@ export const failures = [
 		path: [],
 		branch: [data],
 	},
-]
+];

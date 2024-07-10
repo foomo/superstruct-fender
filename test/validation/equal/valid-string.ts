@@ -1,8 +1,8 @@
-import { fend, equal } from '../../../src'
-import { string } from 'superstruct'
+import { string } from 'superstruct';
+import { equal, fend } from '../../../src';
 
-export const Struct = fend(string(), equal('foo'))
+export const Struct = fend(string(), equal('foo'));
 
-export const data = 'foo'
+export const data = 'foo';
 
-export const output = 'foo'
+export const output = 'foo';
